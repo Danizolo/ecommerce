@@ -1,0 +1,30 @@
+Login Module and Registration Module
+
+Landing Page: Registration Page
+
+Credentials: 
+
+    1. Phone Number
+    2. Password
+    3. Repeat Password
+
+After registering with phone number User has to verify email.
+
+Work Flow: Registration Module
+
+    1.
+
+
+
+Tables 
+    1. _user_credentials 
+    [
+        'id', 
+        'name',
+        'email', 
+        'contact', 
+        'is_active',
+        'created_at',
+        'updated_at,
+        'user_type', (Admin - 0, Seller - 1, User - 2)
+    ]

@@ -12,9 +12,18 @@
 **/
 // Otp page
 
-export const __Op_signInTitle = "Sign In";
-export const __Op_otpTitle = "Enter OTP";
-export const __Op_sendOTP = "Send OTP";
+// Title Constant
+export const __TC_SIGNIN = "Sign In";
+
+
+
+
+// Button Constant
+export const __BC_ENTEROTP = "Enter OTP";
+export const __BC_SENDOTP = "Send OTP";
+export const __BC_LOGIN = "Send OTP";
+
+
 
 
 

@@ -13,18 +13,22 @@
  * - Modification    :
  **/
 
-import * as Utilities from "../../utilities/appUtilities/constants";
+import * as Utilities from "../../utilities/appUtilities/Constants";
 import { useState } from "react";
 import LargeButton from "@/components/buttons/LargeButton";
 import LargeIconButton from "@/components/buttons/LargeIconButton";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { generateOtp } from "@/utilities/helpers/HelperFunctions";
 
 export default function signIn() {
   const [__phoneNumber, setPhoneNumber] = useState("");
   const [__otpElement, setOTPElement] = useState(false);
 
-  const togglePhoneNuber = () => {
+  const sendOtp = async () => {
     try {
+      const otp = generateOtp(6);
+      const receiverMobileNumber = "+918825862535";
+      const message = "This is your first Message";
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +40,7 @@ export default function signIn() {
         // OTP Element
         <div className="bg-white rounded-xl h-2/5 w-1/4">
           <div className="flex justify-center items-center p-2">
-            <p className="text-purple-600">{Utilities.__Op_otpTitle}</p>
+            <p className="text-purple-600">{Utilities.__BC_ENTEROTP}</p>
           </div>
 
           <div className="flex flex-col gap-4 justify-center items-center h-1/2 text-sm">
@@ -46,37 +50,22 @@ export default function signIn() {
               placeholder="Phone Number"
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
-            <button
-              onClick={() => setOTPElement(!__otpElement)}
-              className="px-8 bg-purple-600 text-white py-2 rounded-xl hover:bg-white hover:text-purple-600 border border-purple-500 w-3/4"
-            >
-              {Utilities.__Op_signInTitle}
-            </button>
-          </div>
-          <div className="flex flex-row gap-2 justify-center items-center">
-            <div className="flex justify-between gap-4">
-              <div>
-                <span></span>
-              </div>
-              <div>
-                <LargeIconButton
-                  buttonLabel="Icon Button"
-                  bgColor="purple-600"
-                  textColor="white"
-                  bgHover="white"
-                  textHover="purple-600"
-                  icon={faGithub}
-                  iconSize="2xl"
-                />
-              </div>
-            </div>
+            <LargeIconButton
+              buttonLabel={Utilities.__BC_SENDOTP}
+              bgColor="purple-600"
+              textColor="white"
+              bgHover="white"
+              textHover="purple-600"
+              icon={faGithub}
+              iconSize="2xl"
+            />
           </div>
         </div>
       ) : (
         // Login Element
         <div className="bg-white rounded-xl h-1/3 w-1/4">
           <div className="flex justify-center items-center p-2">
-            <p className="text-purple-600">{Utilities.__Op_signInTitle}</p>
+            <p className="text-purple-600">{Utilities.__TC_SIGNIN}</p>
           </div>
 
           <div className="flex flex-col gap-4 justify-center items-center h-1/2 text-sm">
@@ -88,12 +77,15 @@ export default function signIn() {
             />
 
             <LargeButton
-              buttonLabel={Utilities.__Op_sendOTP}
+              buttonLabel={Utilities.__BC_SENDOTP}
               bgColor="purple-600"
               textColor="white"
               bgHover="white"
               textHover="purple-600"
-              onClickFunction={() => setOTPElement(!__otpElement)}
+              onClickFunction={() => {
+                setOTPElement(!__otpElement);
+                sendOtp();
+              }}
             />
           </div>
         </div>

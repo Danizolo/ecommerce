@@ -12,7 +12,7 @@
  **/
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import {SizeProp} from "@fortawesome/fontawesome-svg-core"
+import {SizeProp} from "@fortawesome/fontawesome-svg-core";
 
 interface LargeIconButtonProps {
   buttonLabel: string;

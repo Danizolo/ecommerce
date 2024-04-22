@@ -2,18 +2,15 @@
     * @description      : 
     * @author           : DHANUSH
     * @group            : 
-    * @created          : 14/08/2023 - 19:02:29
+    * @created          : 13/04/2024 - 21:36:46
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
-    * - Date            : 14/08/2023
+    * - Date            : 13/04/2024
     * - Author          : DHANUSH
     * - Modification    : 
 **/
-export default function register(){
-    return (
-        <div>
-            Register Page
-        </div>
-    )
+export const ResponseMessages = {
+
+    __RM_SESSION_EXP : "Session Expired...! Please login again..."
 }
